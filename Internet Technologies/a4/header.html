@@ -1,0 +1,93 @@
+<!- tt13fa 5618293 ->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="css/defaultTheme.css" id="lnk"/>
+<script src="js/login.js"></script>
+
+<div class="w3-content">
+ <img class="mySlides" src="pictures/banner1.jpg" alt="custom_html_banner1" style="width:100%">
+ <img class="mySlides" src="pictures/banner2.png" alt="custom_html_banner2" style="width:100%">
+ <img class="mySlides" src="pictures/banner3.jpg" alt="custom_html_banner3" style="width:100%">
+ <div class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)"></div>
+ <div class="w3-button w3-black w3-display-right" onclick="plusDivs(1)"></div>
+</div>
+
+<script>
+setInterval("plusDivs(1)", 1500);
+ var slideIndex = 1;
+ showDivs(slideIndex);
+ function plusDivs(n) {
+ showDivs(slideIndex += n);
+  }
+ function showDivs(n) {
+ var i;
+ var x = document.getElementsByClassName("mySlides");
+ if (n > x.length) {slideIndex = 1} if (n < 1) {slideIndex = x.length}for
+ (i = 0; i < x.length; i++) {x[i].style.display = "none";}
+ x[slideIndex-1].style.display = "block"; }
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function () 
+{
+	var checkbox = document.querySelector('input[type="checkbox"]');
+	checkbox.addEventListener('change', function () 
+	{
+		if (checkbox.checked) 
+    		{
+      			localStorage.setItem("theme", "default")
+   		}
+		else 
+		{
+      			localStorage.setItem("theme", "light")
+    		}
+		location.reload();		
+  	});
+});
+</script>
+
+<header> 
+<ul>
+<li><a href="https://www.cosc.brocku.ca/~tt13fa/a4/products.cgi">Products</a></li>
+<li><a href="https://www.cosc.brocku.ca/~tt13fa/a4/WishList.html">Wishlist</a></li>
+<li><a id="lgn" onclick="loginFunction()">1 Log </a></li>
+<li><a> Dark Mode
+<label class="switch">
+	<input type="checkbox" id="myCheck">
+	<div class="slider round"></div>
+</label>
+</a></li>
+<li class="search-container">
+	<form action="/~tt13fa/a4/product.cgi">
+      		<input type="text" placeholder="Search.." name="product">
+    	</form>
+</li>
+</ul>
+<script src="js/toggle.js"></script>
+<script>
+var status = localStorage.getItem("theme");
+if(status == "default")
+{
+	document.getElementById("myCheck").checked = true;
+	document.querySelector("link[href='css/defaultTheme.css']").href = "css/defaultTheme.css";
+}
+else
+{
+	document.getElementById("myCheck").checked = false;	
+	document.querySelector("link[href='css/defaultTheme.css']").href = "css/lightTheme.css";
+}
+</script>
+</header>
+<body>
+<script src="js/loginStatus.js"></script>
+<div id="id01" class="modal">
+	<form class="modal-content animate">
+		<div class="container">
+			<label ><b>Username</b></label>
+			<input id='userId' type="text" placeholder="Enter Username">
+			<label <b>Password</b></label>
+			<input id='pswdId' type="password" placeholder="Enter Password">		
+			<button onclick="login()">Login</button>
+			<button onclick="regUser()">Sign Up</button>	
+		</div>
+	</form>
+</div>
+</body>
