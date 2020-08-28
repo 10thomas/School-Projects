@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<drjava version="drjava-20160913-225446">
+  <project autorefresh="false" build="" main="assign1" root="" work="">
+    <createjar file=""/>
+    <source>
+      <file active="true" name="vehicles/Vehicle.java" package="" timestamp="31-Jan-2019 14:26:48">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="assign1.java" package="" timestamp="31-Jan-2019 14:46:29">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="GUI/lightStatusNode.java" package="" timestamp="31-Jan-2019 14:39:26">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="GUI/Map.java" package="" timestamp="31-Jan-2019 14:38:57">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="vehicles/Bus.java" package="" timestamp="31-Jan-2019 14:51:01">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="vehicles/Car.java" package="" timestamp="31-Jan-2019 14:27:17">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+      <file name="vehicles/Truck.java" package="" timestamp="31-Jan-2019 14:27:33">
+        <select from="317" to="317"/>
+        <scroll column="0" row="0"/>
+      </file>
+    </source>
+    <included/>
+    <excluded/>
+    <collapsed/>
+    <classpath/>
+    <breakpoints/>
+    <watches/>
+    <bookmarks/>
+    <preferences/>
+  </project>
+</drjava>
