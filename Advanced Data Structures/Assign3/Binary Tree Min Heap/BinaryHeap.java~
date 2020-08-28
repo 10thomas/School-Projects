@@ -1,0 +1,113 @@
+import BasicIO.*;
+
+public class BinaryHeap
+{
+  public Node root;
+  public Node tmp;
+  
+  public static ASCIIDataFile data; 
+  
+  public void insert(int key) 
+  {
+    Node newNode = new Node(key);
+    
+    if (root == null) 
+    {
+      root = newNode;
+    } 
+    else 
+    {
+      Node currentNode = root;
+      Node parent;
+      while (true) 
+      {
+        parent = currentNode;
+        if (key < currentNode.key) 
+        {
+          currentNode = currentNode.left;
+          if (currentNode == null) 
+          {
+            parent.left = newNode;
+            return; // All Done
+          }
+        }
+        else 
+        {
+          currentNode = currentNode.right;
+          if (currentNode == null) 
+          {
+            parent.right = newNode;
+            return;
+          }
+        }
+      }
+    }
+  }
+
+  //root, left, right
+  public void traverse(Node currentNode) 
+  {
+    if (currentNode != null) 
+    {
+      System.out.print(currentNode + " ");
+      traverse(currentNode.left);
+      traverse(currentNode.right);
+    }
+  } 
+  
+  public static Node deleteMin(Node n)
+  {
+    Node temp = n;
+    Node root = n;
+    if(n.left != null)
+    {
+      n = n.left;
+      //by using two .right, we can later set the .right value to be null and keep it from becoming
+      //a cycle
+      if(n.right!= null)
+      {
+        while(n.right.right != null)
+        {
+          n = n.right;
+        }
+      }
+      else
+      {
+        n = root.right;
+      }
+    }
+    root = n.right;
+    n.right = null;
+    if(temp.left!=null)
+      root.left = temp.left;
+    if(temp.left!=null)
+    root.right = temp.right;
+    return root;
+  }
+  
+  public static void main(String[] args) 
+  {    
+    BinaryHeap theTree = new BinaryHeap();
+    data = new ASCIIDataFile();
+    
+    int n = data.readInt();
+        
+    for(int i = 0; i < n; i++)
+    {
+      int val = data.readInt();
+      theTree.insert(val);
+    }
+    Node tmp = theTree.root;
+    
+    int size = 1;
+    
+    //due to a glitch the program cannot traverse multiple times during one execution and must manually change the 
+    //size variable to be the number of traverses they want to see the output for
+    for(int i = 0; i < size; i++)
+    {
+      theTree.root = deleteMin(theTree.root);
+    }
+    theTree.traverse(theTree.root);
+    System.out.println();
+  }
+}
