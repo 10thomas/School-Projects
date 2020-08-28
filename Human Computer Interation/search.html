@@ -1,0 +1,151 @@
+<!-Thomas Tsinokas tt13fa 5618293 ->
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+<head>
+<title>Search</title>
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script> 
+$(function(){
+  $("#header").load("header.html"); 
+});
+</script> 
+</head>
+<body>
+<div id="header"></div>
+	
+<h2>Search</h2>
+
+<table width="50%">
+<tr>
+<th>City:</th>
+<td>
+<form>
+  <select name="city">
+    <option value="blank">~</option>
+    <option value="niagra">Niagra</option>
+    <option value="saint_catherines">St.Catherines</option>
+    <option value="thorold">Thorold</option>
+  </select>
+</form> 
+</td>
+<th>Square Foot:</th>
+<td>
+<form>
+  <select name="sqr_ft">
+    <option value="blank">~</option>
+    <option value="under_50">< 50,000</option>
+    <option value="50_to_100">50,000-100,000</option>
+    <option value="100_plus">> 100,000</option>
+  </select>
+</form>
+</td> 
+</tr>
+
+<tr>
+<th>Bedrooms:</th>
+<td>
+<form>
+  <select name="bedrooms">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+    <option value="five">5</option>
+    <option value="six">6</option>
+  </select>
+</form> 
+</td>
+<th>Bathrooms:</th>
+<td>
+<form>
+  <select name="bathroom">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+</form>
+</td> 
+</tr>
+
+<tr>
+<th>Garage:</th>
+<td>
+<form>
+  <select name="garage">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+</form> 
+</td>
+<th>Price:</th>
+<td>
+<form>
+  <select name="price">
+    <option value="blank">~</option>
+    <option value="500k">< $500,000</option>
+    <option value="1mil">$500,000 to $1,000,000</option>
+    <option value="1mil+">> $1,000,000</option>
+  </select>
+</form>
+</td> 
+</tr>
+
+</table>
+  <input type="submit">
+
+<table border="1" width="100%">
+<tr>
+<td align="left" width="10px">
+<a href="https://www.cosc.brocku.ca/~tt13fa/COSC3P94/house.html">
+<img src="house.jpg" alt="Trulli"   width="180px" height="auto" >  </a>
+</td>
+<td valign="top">
+<b>
+<font size="6">
+$750,000
+</font>
+</b>
+<br> 
+<font size="4">
+123 Fairy St, Thorold
+</font>
+<br>
+This is a nice house, you should buy it.
+</td>
+</tr>
+
+<tr>
+<td align="left" width="10px">
+<a href="https://www.cosc.brocku.ca/~tt13fa/COSC3P94/houseb.html">
+<img src="houseb.jpg" alt="Trulli" width="180px" height="auto">  </a>
+</th>
+<td valign="top">
+<b>
+<font size="6">
+$500,000
+</font>
+</b>
+<br> 
+<font size="4">
+74 Random Road, Niagra
+</font>
+<br>
+Possibly Haunted. Cemetary in the backyard
+</td>
+
+</tr>
+
+</table>
+</body>
+</html>

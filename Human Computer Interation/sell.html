@@ -1,0 +1,127 @@
+<!-Thomas Tsinokas tt13fa 5618293 ->
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=0.86, maximum-scale=3.0, minimum-scale=0.86">
+
+<head>
+<title>Sell</title>
+<script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<script> 
+$(function(){
+  $("#header").load("header.html"); 
+});
+</script> 
+</head>
+<body>
+<div id="header"></div>
+<h2> Sell My Home </h2>
+<div style ="width: 50%">
+Please fill out the form below, once completed a representative will reveiw the information. If there is any information still need they will reach out to you. This process can take approximatly 3-5 business days to complete
+</div>
+<table width= "50%">
+<tr> 
+<th> Address: </th>
+<td>
+<textarea rows="1" cols="15"></textarea>
+</td> 
+
+<th>Postal Code: </th>
+<td>
+<textarea rows="1" cols="15"></textarea>
+</td> 
+
+</tr>
+
+<tr>
+<th>City:</th>
+<td>
+<form>
+  <select name="city">
+    <option value="blank">~</option>
+    <option value="niagra">Niagra</option>
+    <option value="saint_catherines">St.Catherines</option>
+    <option value="thorold">Thorold</option>
+  </select>
+</form> 
+
+
+</td>
+<th  width = "25%">Square Foot:</th>
+<td width = "25%">
+<textarea rows="1" cols="15"></textarea>
+</td> 
+</td> 
+</tr>
+
+<tr>
+<th>Bedrooms:</th>
+<td>
+<form>
+  <select name="bedrooms">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+    <option value="five">5</option>
+    <option value="six">6</option>
+  </select>
+</form> 
+</td>
+<th>Bathrooms:</th>
+<td>
+<form>
+  <select name="bathroom">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+</form>
+</td> 
+</tr>
+
+<tr>
+<th>Garage:</th>
+<td>
+<form>
+  <select name="garage">
+    <option value="blank">~</option>
+    <option value="one">1</option>
+    <option value="two">2</option>
+    <option value="three">3</option>
+    <option value="four">4</option>
+  </select>
+</form> 
+</td>
+<th>Price:</th>
+<td>
+<textarea rows="1" cols="15"></textarea>
+</td> 
+</tr>
+<tr>
+<th> Description </th>
+<td>
+<textarea rows="5" cols="30"></textarea>
+</td>
+</tr>
+<tr> 
+<th> Pictures</th>
+<td>
+<input type="file" name="pic" accept="image/*">
+<input type="file" name="pic" accept="image/*">
+<input type="file" name="pic" accept="image/*">
+<input type="file" name="pic" accept="image/*">
+<input type="file" name="pic" accept="image/*">
+</td>
+</tr>
+
+</table>
+  <input type="submit">
+
+</body>
+</html>
