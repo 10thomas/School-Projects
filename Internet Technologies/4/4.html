@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<body>
+<br/><button id="clicker">Click!</button>
+
+<div id="result"></div>
+<style>
+img { width:200px; height:300px; border: 2px solid black;}
+</style>
+<script>
+
+window.addEventListener('load',
+function(){
+window.clicker.addEventListener("click", function(){ swap('img1'); } );
+window.clicker.addEventListener("click", function(){ swap('img2'); } );
+window.clicker.addEventListener("click", function(){ swap('img3'); } );
+window.clicker.addEventListener("click", function(){ swap('img4'); } );
+}
+);
+
+var counter=3;
+function augment() 
+{
+	counter=(counter+1)%10;
+	window.bar.value=counter;
+}
+// Check browser support
+if (typeof(Storage) !== "undefined") {
+    // Store
+    	localStorage.setItem('howdy', 'there');
+	localStorage.setItem("dealie","grobble");
+	localStorage.setItem("things","stuff");
+
+    // Retrieve
+    document.getElementById("result").innerHTML = localStorage.getItem("howdy");
+} else {
+    document.getElementById("result").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+function swap(id) 
+{
+im=document.getElementById(id);
+im.style.borderColor='red';
+im.addEventListener('load',function(im){im.target.style.borderColor='black';});
+im.src=
+"https://picsum.photos/2000/3000/?image="+
+Math.floor(Math.random()*10)+
+Math.floor(Math.random()*10)+
+Math.floor(Math.random()*10);
+}
+
+</script>
+<progress value='1' max='10' id='bar'></progress>
+<img id="img1"/> 
+<img id="img2"/> 
+<img id="img3"/> 
+<img id="img4"/>
+
+
+</body>
+</html>

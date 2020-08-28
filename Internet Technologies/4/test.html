@@ -1,0 +1,76 @@
+<html>
+<head>
+<title>Hi</title>
+<style>
+#container {
+background-color: black;
+padding:10px;
+width:160px;
+height:160px;
+}
+.dealie {
+background-color: red;
+width: 40px; height: 40px;
+display: inline-block;
+}
+.on {
+background-color: lightgreen;
+}
+</style>
+<script>
+
+function buildgrid() 
+{
+	container=window.container;
+	for (r=0;r<4;r++) 
+	{
+		nextrow=document.createElement("div");
+		for (c=0;c<4;c++) 
+		{
+			cell=document.createElement("div");
+			cell.id="r"+r+"c"+c;
+			cell.className="dealie";
+			if (grid[cell.id]) cell.classList.toggle('on'); //***
+				cell.addEventListener('click',togglecell);
+			container.appendChild(cell);
+		}
+		container.appendChild(nextrow);
+	}
+}
+window.addEventListener('load',buildgrid);
+
+function loadstate() {
+if (localStorage.getItem('gridstate')) {
+griddle=JSON.parse(localStorage.getItem('gridstate'));
+}
+else {
+griddle={};
+for (r=0;r<4;r++) {
+for (c=0;c<4;c++) {
+griddle['r'+r+'c'+c]=false;
+}
+}
+}
+return griddle;
+}
+var grid=loadstate();
+
+function savestate() {
+localStorage.setItem("gridstate",JSON.stringify(grid));
+}
+
+function togglecell(event) {
+cell=event.target;
+newstate=cell.classList.toggle('on');
+grid[cell.id]=newstate;
+savestate();
+}
+
+</script>
+</head>
+<body>
+<div id="container">
+
+</div>
+</body>
+</html>

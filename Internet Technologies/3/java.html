@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<title>Sort a HTML List Alphabetically</title>
+<body>
+
+<p>Type a name into the text box and click "Add" to add it to the list</p>
+Name: <input type="text" id="myText" value="Mickey">
+<button onclick="addToList()">Add</button>
+<br/>
+
+<p>Type "Sort" to alphabetically sort the list</p>
+<button onclick="sortList()">Sort</button>
+
+<button onclick="toggle()">Hide/Show List</button>
+
+<ul id="list">
+  <li>Oslo</li>
+  <li>Stockholm</li>
+  <li>Helsinki</li>
+  <li>Berlin</li>
+  <li>Rome</li>
+  <li>Madrid</li>
+</ul>
+
+<script>
+
+function toggle() {
+    var x = document.getElementById("list");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+
+function addToList() 
+{
+  var ul = document.getElementById("list");
+  var li = document.createElement("li");
+	li.appendChild(document.createTextNode(document.getElementById("myText").value));
+  li.setAttribute("id", "newElement"); // added line
+  ul.appendChild(li);
+}
+
+function sortList() 
+{
+  var list, i, switching, b, shouldSwitch;
+  list = document.getElementById("list");
+  switching = true;
+  /*Make a loop that will continue until
+  no switching has been done:*/
+  while (switching) {
+    //start by saying: no switching is done:
+    switching = false;
+    b = list.getElementsByTagName("LI");
+    //Loop through all list-items:
+    for (i = 0; i < (b.length - 1); i++) {
+      //start by saying there should be no switching:
+      shouldSwitch = false;
+      /*check if the next item should
+      switch place with the current item:*/
+      if (b[i].innerHTML.toLowerCase() > b[i + 1].innerHTML.toLowerCase()) {
+        /*if next item is alphabetically
+        lower than current item, mark as a switch
+        and break the loop:*/
+        shouldSwitch = true;
+        break;
+      }
+    }
+    if (shouldSwitch) {
+      /*If a switch has been marked, make the switch
+      and mark the switch as done:*/
+      b[i].parentNode.insertBefore(b[i + 1], b[i]);
+      switching = true;
+    }
+  }
+}
+</script>
+
+</body>
+</html>
