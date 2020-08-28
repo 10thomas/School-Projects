@@ -1,0 +1,20 @@
+1.
+let s be the array from 0 to n-1
+Let L be the length of the logest ascedning subsequence where index i is the last element of the subsequence
+
+a) an approriate function
+	travwrse the list of s, for each value compare all the values that are larger after it
+	for each value that is greater continue on.
+	each time it ascends increment the counter for that by 1.
+	the value at the end that is largest is the largest ascending subseuquence
+
+
+b) the recurrence is 
+L(i)	= 1 + max { L(j)}	if 0 < j < i and s[i] > s[j]
+	= 1 			if j does not decist
+c) principle of optimality holds true
+d) algortithm using the recursion
+	max(L(i)) where 0 < i < n.
+e) the program 
+f) test program
+

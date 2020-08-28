@@ -1,0 +1,69 @@
+import java.util.Scanner;
+
+public class COSC_3P03_A3_Q2 
+{ 
+  public static String temp = "";
+  public static int oldCount = Integer.MAX_VALUE;
+  public static int count = 0;
+  public static int max;
+  public static String finalList;
+  static int MatrixChainOrder(int s[], int i, int j) 
+  { 
+    if (i == j) 
+      return 0; 
+    int min = Integer.MAX_VALUE; 
+    for (int k = i; k < j; k++) 
+    { 
+      String matrix1 = "M" + i;
+      String matrix2 = "M" + (k+1);
+      String matrix3 = "M" + k;
+      
+      int lowerChain = MatrixChainOrder(s, i, k);
+      int upperChain = MatrixChainOrder(s, k + 1, j);
+      
+      String oldTemp = temp;  
+      temp = "(" + matrix1 + " * " + matrix2 + ")";
+      if(upperChain > 0 && lowerChain > 0)
+        temp = "(" + "(" + matrix1 + " * " + matrix3 + ")" + " * " + oldTemp + ")";
+      else if((k+1)<j)
+        temp = "(" + matrix1 + " * " + oldTemp + ")";
+      else if (i < k)
+        temp = "(" + oldTemp + " * " + matrix2 + ")";
+      String[] listSize = temp.split(" * ");
+      
+      count = lowerChain +upperChain + s[i - 1] * s[k] * s[j]; 
+      //System.out.println(temp + " ; " + lowerChain + "+" + upperChain + "+" + s[i-1] + "*" + s[k] + "*" + s[j] + " = " + count);
+      if(listSize.length == (2*max-3))
+      {
+        if(count < oldCount)
+        {
+          oldCount = count;
+          finalList = temp;
+        }
+      }
+      
+      if (count < min) 
+        min = count; 
+    } 
+    return min; 
+  } 
+  
+  public static void main(String args[]) 
+  { 
+    Scanner scan = new Scanner(System.in);
+    System.out.print("Enter a value for n: ");
+    int n = scan.nextInt();
+     int s[] = new int[n];
+    for(int i = 0; i < n; i++)
+    {
+      System.out.print("Enter a value for r" + i + ": ");
+      s[i] = scan.nextInt();
+    }
+    scan.close();
+    
+    max = n;
+    int calc = MatrixChainOrder(s, 1, n - 1);
+    
+    System.out.println("The Fastest time to multiply is " + finalList + " with " + calc + " number of calculations");
+  } 
+}
