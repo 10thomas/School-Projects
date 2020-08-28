@@ -1,0 +1,21 @@
+Player:	White
+Turn:	White
+Black	Pawn	1	1	false
+Black	Rook	0	0	false
+Black	Knight	0	1	false
+Black	Bishop	0	2	false
+Black	King	0	3	false
+Black	Queen	0	4	false
+Black	Bishop	0	5	false
+Black	Knight	0	6	false
+Black	Rook	0	7	false
+White	Rook	7	0	false
+White	Knight	7	1	false
+White	Bishop	7	2	false
+White	King	7	3	false
+White	Queen	7	4	false
+White	Bishop	7	5	false
+White	Knight	7	6	false
+White	Rook	7	7	false
+White	Pawn	6	1	false
+EOF

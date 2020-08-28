@@ -1,0 +1,35 @@
+public class ProblemSet 
+{
+  public static double sum1 = 0.0;
+  public static double sum2 = 0.0;
+  public static final double LOC_X_LOW = 1;
+  public static final double LOC_X_HIGH = 4;
+  public static final double VEL_LOW = -1;
+  public static final double VEL_HIGH = 1;
+  
+  public static final double ERR_TOLERANCE = 1E-20; // the smaller the tolerance, the more accurate the result, 
+  // but the number of iteration is increased
+  
+  public static double evaluate(Location location) 
+  {
+    double result = 0;
+    double x = location.getLoc()[0]; // the "x" part of the location
+    result = Math.pow((x*x*x*x)-(2*x*x*x),2); //x^4 -2x^3
+    return result;
+  } //evaluate
+    
+  public static double evaluate2(Location location) 
+  {
+    double result = 0;
+    double x = location.getLoc()[0]; // the "x" part of the location
+    
+    sum1 += Math.pow(x, 2);
+    sum2 += 2*Math.PI*x;
+    
+    //result = -20.0*Math.exp(-0.2*Math.sqrt(sum1 / x)) + 20
+      //- Math.exp(sum2 /x) + Math.exp(1.0);
+    result = x * x ;
+     
+    return result;
+  } //evaluate2
+} //ProblemSet
