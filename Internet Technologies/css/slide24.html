@@ -1,0 +1,62 @@
+<html>
+<head>
+	<title>Very much text</title>
+	<!-- For the sake of readability/demonstration, I'm going to stop using external style sheets; that doesn't mean you should. -->
+	<style>
+		header {
+			
+		}
+		.nudge {
+			position:relative;
+			left:30pt; /*Try a negative value?*/
+		}
+		.bop {
+			position:absolute;
+			right:20pt;
+		}
+		footer {
+			position:fixed;
+			bottom:10pt;
+			background-color: violet;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		BROCCOLI UNIVERSITY EXAMPLE... 5? 6? Something. 
+	</header>
+	<div>This text is simply in a div. Just a normal ol' div</div>
+	<div class="nudge">
+		However, this one has been repositioned as position:relative. Note that it's not the same as padding. It's just
+		moved by a specified amount <em>relative to where it would otherwise have been</em>.
+	</div>
+	<div style="background-color:yellow; padding:10pt;">
+		Outer Div
+		<div style="background-color:orange; padding:inherit;" class="bop">
+			Middle Div; Absolute Position
+			<div style="background-color:lime; padding:inherit;">
+				Inner Div
+			</div>
+			<div style="background-color:lime; padding:inherit;" class="bop">
+				Inner Div; Absolute Position
+			</div>
+		</div>
+	</div>
+	<div style="width:80pt">
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something? lorem ipsum... something?
+		
+	</div>
+	
+	<footer>
+		Copyright: 201... yeah. Like anyone wants to bother copying this!
+	</footer>
+</body>
+</html>

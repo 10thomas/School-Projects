@@ -1,0 +1,48 @@
+<html>
+<head>
+	<title>Basic Table</title>
+	<!-- Hopefully I stopped using these until I got to slide 26. The live-editor really is faster, and better for demonstration. -->
+	<style>
+		/*To specify that a rule should apply to a *class*, simply use a period and the class's name in the selector. */
+		.snarfgugl {
+			background-color: cyan;
+		}
+		
+		/*We can combine these with any other selectors as normal. */
+		p .snarfgugl {
+			color: red;
+		}
+		
+		/*However, this is not the same thing! */
+		p.snarfgugl {
+			color: olive;
+		}
+	</style>
+</head>
+<body>
+	<header>
+		BROCCOLI UNIVERSITY EXAMPLE
+	</header>
+	<p>
+		This page has a 'header', and a 'footer', and a 'paragraph'. But I want... a snarfgugl.
+	</p>
+	<p>
+		(If you aren't familiar with it, a 'snarfgugl' is a piece of text that one pretends is special or unique, when it's actually just a contrived
+		example, labelled with a ridiculously fake name)
+	</p>
+	<p>But we don't have an HTML tag for snarfgugl's. If only we could have some sort of generic block, and then make it be special...</p>
+	<div class="snarfgugl">
+		This is <i>totally</i> a snarfgugl. Look at its snarfiness! LOOK AT IT!
+	</div>
+	<p>
+		Of course, if we wish to make something special inline, we'd need a way to identify that span of text... <span class='snarfgugl'>AHA!
+		THAT'S SO <sup><small>(not)</small></sup> CLEVER!</span>
+	</p>
+	<p class="snarfgugl">
+		Rather than a paragraph that contains snarfgugl-iness, this paragraph <em>is</em> also snarfgugl-y!
+	</p>
+	<footer>
+		Copyright: 201... yeah. Like anyone wants to bother copying this!
+	</footer>
+</body>
+</html>

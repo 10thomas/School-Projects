@@ -1,0 +1,16 @@
+/*This is a separate CSS style sheet (an 'external' style sheet).
+ *The nice thing about it is that we can reuse it in multiple documents.
+ *
+ *That's a big part of why so many websites can easily have a common theme across them:
+ *	They define a single set of external style sheets, and then have all of their pages link to those sheets.
+ *
+ *Of course, if we wanted to change the theme of an entire web domain, that'd mean only editing a dozen or so style sheets, instead of
+ *hundreds (or thousands) of webpages!
+ *
+ *Fun fact: Also handier for allowing for user customization (e.g. choose the 'night mode' or the 'day mode' style).
+ */
+
+/*The rules themselves are exactly identical to how they were as embedded rules.*/
+table { border: 1px solid black; }
+th { border: 1px solid black; }
+td { border: 1px solid black; }

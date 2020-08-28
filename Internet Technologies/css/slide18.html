@@ -1,0 +1,70 @@
+<html>
+<head>
+	<title>Basic Table</title>
+	<!-- For the sake of readability/demonstration, I'm going to stop using external style sheets; that doesn't mean you should. -->
+	<style>
+		table, th, td { border: 1px solid black; }
+		
+		p { background-color: cyan; }
+		article>p { background-color: lightgreen; }
+		article p { color: green; }
+		p+p { text-decoration: underline; }
+		
+		/* Though ugly and poor style, you can define the same selectors twice. If properties conflict, they're overridden; otherwise they combine. */
+		p {
+			margin:  10pt 20pt 30pt 40pt;
+			padding-left: 30pt;
+		}
+		/* (You can choose how many numbers to provide. If you use all four, they go clockwise, starting with 'top') */
+	</style>
+</head>
+<body>
+	<header>
+		BROCCOLI UNIVERSITY EXAMPLE... 5? 6? Something. 
+	</header>
+	<p>
+		This paragraph is just stranded. All paragraphs have a cyan background.
+	</p>
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	<section>
+	<h2>This is inside a section</h2>
+	<p>
+		Oh. hey. Look at how big the 'block' actually is!
+	</p>
+	<p>
+		And there's such a large margin between each paragraph block. ... interesting... (also, this is a paragraph that <i>immediately</i> follows a paragraph)
+	</p>
+	<h2>(end of section)</h2>
+	<article>
+		I like articles.
+		<p>
+			Statement of paragraphicalness, within an article! (paragraphs with an <i>immediate</i> parent of article have a light-green background)
+		</p>
+		<section>
+			Sectionation of the article?
+			<p>
+				Cohesive theme (paragraph) within a section, within an article. Any paragraph that's an ancestor of an article has green text (notice above!).
+			</p>
+		</section>
+	</article>
+	<footer>
+		Copyright: 201... yeah. Like anyone wants to bother copying this!
+	</footer>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Basic Table</title>
+	<!-- Let's use an 'embedded style sheet' instead! -->
+	<style type="text/css">
+		/*You can comment in CSS by starting with a forward-slash and asterisk, and ending with an asterisk and forward-slash*/
+		
+		/*Here, 'table' is a 'selector': something that matches up with tags to decide whether or not to apply the rule/declaration.*/
+		table { /*This doesn't need to be mutliple lines; it's just for readability.*/
+			/*Each rule consists of a property, a colon, a value (or compound value), and a semicolon. */
+			border: 1px solid black;
+		}
+		/*So, basically, anythinig that qualifies as a "table tag" will have a 1-pixel solid black border.*/
+		
+		th { border: 1px solid black; }
+		td { border: 1px solid black; }
+	</style>
+	<!-- Every time you want to include this styling in a document, you need to copy&paste the text in. -->
+</head>
+<body>
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	
+	<!-- What's nice is that we can have multiple tables, all using that same styling. -->
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	
+	<!-- We CAN still have exceptions; since it's closer to the element (i.e. more recent/specific), this inline style overrides the embedded style. -->
+	<table style="border: 1px dashed red;">
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+</body>
+</html>

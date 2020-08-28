@@ -1,0 +1,31 @@
+scl enable rh-mongodb34 bash
+mongo
+use tt13fa
+db.auth('tt13fa','5618293');
+
+db.dropDatabase()
+
+db.products.insertMany([
+{unit: 'Grima', tier: 'A'},
+{unit: 'Hector', tier: 'A'},
+{unit: 'Leo', tier: 'A'},
+{unit: 'Lucina', tier: 'A'},
+{unit: 'Myrrh', tier: 'A'}
+]);
+
+db.admins.insertMany([
+{user: 'admin1', pswd: 'password'},
+{user: 'admin2', pswd: 'password'}
+]);
+db.users.insertMany([
+{user: 'user1', pswd: 'password'},
+{user: 'user2', pswd: 'password'}
+]);
+
+db.wishlist.insertMany([
+{unit: 'Grima'},
+{unit: 'Lucina'},
+{unit: 'Myrrh'}
+]);
+
+db.wishlist.insertOne({unit:'Test'});

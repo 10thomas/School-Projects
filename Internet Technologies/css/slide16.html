@@ -1,0 +1,44 @@
+<html>
+<head>
+	<title>Basic Table</title>
+	<!--	We can also mix and match sources for CSS. We can link to multiple external sheets, also combine embedded styles, and even use
+		inline, if we wish. Each new style overrides old styles (when there's a direct conflict).
+		It's good convention to list external styles first, and then override with embedded (since those are specific to *this* document), etc.
+	-->
+	<link rel="stylesheet" type="text/css" href="slide16.css"/>
+	
+	<style>
+		/* Use a 'comma' to have a declaration apply to multiple selectors. */
+		table, th, td { border: 1px solid black; }
+	</style>
+</head>
+<body>
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	
+	<p>
+		Are we starting to see how easy/powerful this can be?
+	</p>
+	<p>
+		Oh. hey. Look at how big the 'block' actually is!
+	</p>
+	<p>
+		And there's such a large margin between each paragraph block. ... interesting...
+	</p>
+</body>
+</html>

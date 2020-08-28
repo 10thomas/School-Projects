@@ -1,0 +1,69 @@
+<html>
+<head>
+	<title>Basic Table</title>
+	<!-- Let's use an 'external style sheet', maybe? -->
+	<link rel="stylesheet" type="text/css" href="slide12.css"/>
+	<!--	This is why I was warning against confusing 'anchor' with 'link': a link tag is used to reference
+		another document for the operation of this document.
+	-->
+	
+	<!-- This time, if we wish to reuse the styling, we need only copy that one 'link' tag to the other documents -->
+	
+</head>
+<body>
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	
+	<table>
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+	
+	<!-- We CAN still have exceptions; since it's closer to the element (i.e. more recent/specific), this inline style overrides the embedded style. -->
+	<table style="border: 1px dashed red;">
+		<tr>
+			<th>H1</th>
+			<th>H2</th>
+			<th>H3</th>
+		</tr>
+		<tr>
+			<td>A</td>
+			<td>B</td>
+			<td>C</td>
+		</tr>
+		<tr>
+			<td>D</td>
+			<td>E</td>
+			<td>F</td>
+		</tr>
+	</table>
+</body>
+</html>

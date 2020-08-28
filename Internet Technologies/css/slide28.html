@@ -1,0 +1,100 @@
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			background-color: #401060;
+			color: #F0B080;
+		}
+		main {
+			/*You can figure out 'width' for yourself, so this was more fun. */
+			min-width:600px;
+			max-width:90%;
+			background-color: violet;
+			color: #605010;
+			
+			/*Automatic margins effectively centres the element.
+			(Of course, this isn't the only way to do it) */
+			margin:auto;
+		}
+		
+		header {
+			height: 140px;
+			background-color: #502070;
+			min-width:600px;
+			max-width:90%;
+			margin: auto;
+		}
+		
+		h1:hover, main:hover, header:hover/*, body*/ {
+			transition: background-color 2s;
+			background-color: yellow;
+		}
+		h1,main,header {
+			transition-duration: 500ms;
+		}
+		/*Note that these really aren't hover 'events'.*/
+		
+		h1 {
+			background-color: pink;
+			width: 400px;
+			height:50px; /*What if 'height' wasn't here?*/
+			overflow: hidden; /*Also try: visible, auto, scroll*/
+		}
+		
+		h1::after{
+			content: "Grobble!";
+		}
+		
+		article::first-letter {
+			font-size: 4em;
+		}
+		
+		.button {
+			width:30px;
+			height:30px;
+			overflow:hidden;
+			background-color: indigo;
+			transition-duration:100ms;
+		}
+		.button:hover {
+			width:100%;
+			height:100%;
+			transition-duration:500ms;
+		}
+		
+		/*
+		Note: However this might seem, this is NOT the same thing as animations!
+		If you think you might need those, take a gander here:
+			https://www.w3schools.com/cssref/css3_pr_animation.asp
+		and here:
+			https://www.w3schools.com/css/css3_animations.asp
+		with animatable properties here:
+			https://www.w3schools.com/cssref/css_animatable.asp
+		*/
+	</style>
+	<body>
+		<header><div class="button">This seems unnecessary</div></header>
+		<main>
+		<h1>
+			Label!
+		</h1>
+		<article>
+		things
+		</article>
+		
+		<h1>
+			So, how's everything going with everyone? Good? Good. Oh hey, we should label this, right? I name it... Carl
+		</h1>
+		<article>
+		stuff
+		</article>
+		
+		<article>
+		dealies
+		</article>
+		
+		</main>
+		<footer></footer>
+	</body>
+</head>

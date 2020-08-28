@@ -1,0 +1,252 @@
+<html>
+
+<head>
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	
+<style>
+		
+		
+@media screen 
+{
+			
+body 
+{
+				
+background-color: #401060;
+				
+color: #F0B080;
+			
+}
+		}
+		
+		
+@media screen and (max-width:700px) 
+{
+			
+body 
+{
+				
+background-color: 
+red;
+			
+}
+		
+}
+		
+/*If you want to get REALLY fancy, you can use different CSS media queries to define alternate layouts for
+		
+different screen geometries. */
+		
+		
+@media print 
+{
+			
+li 
+{
+				
+display:block;
+			
+}
+		
+}
+		
+/*Normally you'd use a 'print' media query for something like removing images, turning more backgrounds
+		
+white to save ink, etc. */
+		
+		\
+ul 
+{
+			
+list-style-type: none; 
+/*Could have gone with list-style-image: url('file.ext'); */
+			
+padding:0px;
+		
+}
+		
+@media screen 
+{
+			
+li 
+{
+				
+display: inline-block; 
+/*Use float:left instead if you want an actual list-style type*/
+			
+}
+		
+}
+		
+		
+/* inline-block is handy when you do want an item to define its own block (for things like sizing, etc.), but
+		
+still want it to flow inside a parent block.
+		
+e.g. thumbnails within a gallery: each image might have a specific size, but you'd like them to reshuffle
+		
+to accommodate the browser's size, right? */
+		
+		
+li a 
+{
+			
+display:block;
+			
+color:cyan;
+			
+background-color: 
+olive;
+			
+padding:20px;
+			
+text-decoration: none;
+		
+}
+		
+		
+li a:hover 
+{
+			
+color:green;
+			
+background-color:brown;
+			
+transition: border-radius 4s;
+			
+border-radius:30px;
+		
+}
+		
+		
+/*Since we're not displaying what comes before a list, let's add an unnecessary label in front of our articles!*/
+		
+		
+article 
+{
+			
+counter-increment: dealie;
+		
+}
+		
+		
+article::before 
+{
+			
+content: 
+counter(dealie);
+
+		
+}
+		
+/*BTW: try inspecting this within the browser! */
+
+		
+		
+		
+main 
+{
+			
+/*You can figure out 'width' for yourself, so this was more fun. */
+			
+min-width:600px;
+			
+max-width:90%;
+			
+background-color: violet;
+			
+color: #605010;
+			
+			
+/*Automatic margins effectively centres the element.
+			
+(Of course, this isn't the only way to do it) */
+			
+margin:auto;
+		
+}
+		
+		
+header 
+{
+			
+height: 140px;
+			
+background-color: #502070;
+			
+min-width:600px;
+			
+max-width:90%;
+			
+margin: auto;
+		
+}
+		
+		
+		
+article::first-letter 
+{
+			
+font-size: 4em;
+		
+}
+		
+		
+	
+</style>
+	
+<body>
+		
+<header><nav>
+		
+<ul>
+		
+<li>
+<a href="#">Home</a>
+</li>
+		
+<li>
+<a href="#">Monkeys</a>
+</li>
+		
+<li>
+<a href="#">Even more monkeys</a>
+</li>
+		
+<li>
+<a href="#">Monkey disposal service</a>
+</li>
+		
+</ul>
+		
+</nav>
+</header>
+		
+<main>
+		
+<h1>
+			
+Label!
+		
+</h1>
+		
+<article>
+		things
+		</article>
+		
+		<h1>
+			So, how's everything going with everyone? Good? Good. Oh hey, we should label this, right? I name it... Carl
+		</h1>
+		<article>
+		stuff
+		</article>
+		
+		<article>
+		dealies
+		</article>
+		
+		</main>
+		<footer></footer>
+	</body>
+</head>
