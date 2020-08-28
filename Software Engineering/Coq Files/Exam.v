@@ -1,0 +1,138 @@
+Require Import NaturalDeduction.
+Require Import Hoare.
+Require Import Lemmas.
+Require Import Factorial.
+
+(*
+Question 1:
+Prove the lemma below using the natural deduction rules of the class. 
+*)
+
+Lemma Q1 (A : Type) (P Q : A -> Prop) : (exists x, P x \/ Q x) /\ (forall x, P x -> Q x) -> (exists x, Q x).
+Proof.
+Impl_Intro.
+And_Elim_all in H.
+Exists_Elim in H.
+Forall_Elim in H0 with x.
+Exists_Intro with x.
+Or_Elim in H1.
+Impl_Elim in H3 and H1.
+assumption.
+assumption.
+Qed.
+
+(*
+Question 2:
+Prove Lemma Q2. The function fact is the factorial function.
+*)
+
+Lemma Q2 (n i r : nat) :
+{{ True }}
+  i ::= 0;;  
+  r ::= 1;;
+  While negb (i =? n) 
+  Do
+    i ::= 1 + i;;
+    r ::= i * r
+  Od
+{{ r = fact n }}.
+Proof.
+Hoare_while_tactic with (r = fact i).
+(* Prop 2 *)
+Impl_Intro.
+bool2Prop in H.
+And_Elim_all in H.
+simpl.
+rewrite H.
+trivial.
+(* Prop 3 *)
+Impl_Intro.
+bool2Prop in H.
+And_Elim_all in H.
+rewrite H0 in H.
+assumption.
+Qed.
+
+(*
+Question 3:
+Prove the following lemma. The lemmas f_equal, map_rev and rev_involutive might be useful.
+*)
+
+Definition factEach := map fact.
+
+Lemma Q3 (p q r : Ptr) (l : list nat) :
+{{ p implements l }}
+  q ::= p;;
+  r ::= Null;;
+  While negb (q =p Null)
+  Do
+    r ::= new (fact (q^.elem)) r;;
+    q ::= q^.next
+  Od
+{{ r implements rev (map fact l) }}.
+Proof.
+
+
+Hoare_while_tactic with (exists l1 l2, q implements l2 /\ r implements map fact l1 /\  l = rev l1 ++ l2).
+(* Prop 1 *)
+Impl_Intro.
+Exists_Intro with ([] : list nat).
+Exists_Intro with l.
+And_Intro.
+assumption.
+
+And_Intro.
+simpl.
+apply null_empty.
+simpl.
+trivial.
+
+
+(* Prop 2 *)
+Impl_Intro.
+
+bool2Prop in H.
+And_Elim_all in H.
+Exists_Elim in H.
+Exists_Elim in H1.
+And_Elim_all in H2.
+assert(H5:= Not_Null_Implements_Non_Empty q x0 H0 H2).
+assert (H6 := Non_Empty_expand x0 H5).
+Exists_Elim in H6.
+Exists_Elim in H7.
+
+Exists_Intro with (x1 :: x).
+Exists_Intro with x2.
+And_Intro.
+apply (Next_Implements_Tail _ _ _ _ H2 H8).
+And_Intro.
+assert (H9 := Elem_Implements_Head q x1 x0 x2 H2 H8).
+simpl.
+apply (f_equal fact) in H9.
+apply (New_Implements_expand _ _ _ _ H9 H3).
+simpl.
+rewrite <- app_assoc.
+simpl.
+rewrite H8 in H4.
+assumption.
+
+
+(* Prop 3*)
+Impl_Intro.
+
+bool2Prop in H.
+And_Elim_all in H.
+Exists_Elim in H.
+Exists_Elim in H1.
+
+And_Elim_all in H2.
+assert (H5 := Null_Implements_Empty q x0 H0 H2).
+rewrite H5 in H4.
+rewrite app_nil_r in H4.
+rewrite H4.
+rewrite map_rev.
+
+rewrite rev_involutive.
+
+assumption.
+Qed.

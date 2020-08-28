@@ -1,0 +1,34 @@
+DIGEST c1f558ccf25a75b036abd50ed8546bcb
+FNaturalDeduction
+R58:61 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R58:61 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R191:194 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R191:194 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R322:325 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R322:325 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R454:457 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R454:457 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R617:618 Coq.Init.Logic <> ::type_scope:'~'_x not
+R617:618 Coq.Init.Logic <> ::type_scope:'~'_x not
+R941:947 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R949:950 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R941:947 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R949:950 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R1214:1217 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1214:1217 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1538:1541 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1538:1541 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1864:1867 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R1864:1867 Coq.Init.Logic <> ::type_scope:x_'/\'_x not
+R2098:2101 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R2098:2101 Coq.Init.Logic <> ::type_scope:x_'\/'_x not
+R2356:2359 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2356:2359 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R2835:2836 Coq.Init.Logic <> ::type_scope:'~'_x not
+R2835:2836 Coq.Init.Logic <> ::type_scope:'~'_x not
+R3621:3627 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3629:3630 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3621:3627 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3629:3630 Coq.Init.Logic <> ::type_scope:'exists'_x_'..'_x_','_x not
+R3795:3803 Coq.Logic.Classical <> <> lib
+R3847:3850 Coq.Logic.Classical_Prop <> NNPP thm

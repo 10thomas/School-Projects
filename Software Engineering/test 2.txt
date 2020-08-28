@@ -1,0 +1,52 @@
+Require Import NaturalDeduction.
+Require Import Hoare.
+Require Import PeanoNat.
+Import Nat.
+Require Import List.
+Import ListNotations.
+
+(* In order to print a lemma from the library you can use Check, e.g. Check or_assoc. *)
+
+Lemma L1 (A : Type) : forall (l1 l2 : list A) (a : A), In a l1 \/ In a l2 -> In a (l1 ++ l2).
+(* The lemma or_assoc might be helpful. No other lemma is needed. *)
+Proof.
+Admitted.
+
+Lemma L2 (A : Type) : forall (l : list A), length (rev l) = length l.
+(* The lemmas app_length and add_1_r might be helpful. No other lemma is needed. *)
+Proof.
+Admitted.
+
+Lemma L3 (A B : Type) : forall (l : list A) (f : A -> B) (x : A), In x l -> In (f x) (map f l).
+(* map is the function that applies a function f to each element of a list l. *)
+(* The lemmas in_inv and f_equal might be helpful. No other lemma is needed. *)
+Proof.
+Admitted.
+
+Lemma L4 (r n : nat) :
+{{ 1 <= n }}
+  r ::= 1;;
+  While (negb (r =? n)) 
+  Do
+    r ::= 2*r
+  Od
+{{ exists i, 2^i = n }}.
+Proof.
+Admitted.
+
+Lemma L5help (m n : nat) : m <= n -> n <= m -> m = n.
+(* Proof this lemma first. There is no induction needed but the lemmas Lt.le_lt_or_eq and Lt.le_not_lt might be helpful. *)
+Proof.
+Admitted.
+
+Lemma L5 (r m n : nat) :
+{{ True }}
+  r ::= 0;;
+  While ((r<?m) && (r<?n))
+  Do
+    r ::= r+1
+  Od
+{{ min m n = r }}. 
+(* The lemmas L4help (above), le_0_n, add_1_r, Lt.lt_le_S, nlt_ge, min_l and min_r might be helpful. No other lemma is needed. *)
+Proof.
+Admitted.

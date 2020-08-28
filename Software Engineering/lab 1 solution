@@ -1,0 +1,116 @@
+Require Import NaturalDeduction.
+
+Lemma L15a (P : Prop) : (P -> ~~P) /\ (~~P -> P).
+Proof.
+And_Intro.
+Impl_Intro.
+Not_Intro.
+Not_Elim in H0 and H.
+assumption.
+Impl_Intro.
+PBC.
+Not_Elim in H and H0.
+assumption.
+Qed.
+
+Lemma L15b (P Q : Prop) : (~P /\ ~Q -> ~(P \/ Q)) /\ (~(P \/ Q) -> ~P /\ ~Q).
+Proof.
+And_Intro.
+Impl_Intro.
+Not_Intro.
+Or_Elim in H0.
+And_Elim_1 in H.
+Not_Elim in H1 and H0.
+assumption.
+And_Elim_2 in H.
+Not_Elim in H1 and H0.
+assumption.
+Impl_Intro.
+And_Intro.
+Not_Intro.
+assume (P \/ Q).
+Not_Elim in H and H1.
+assumption.
+Or_Intro_1.
+assumption.
+Not_Intro.
+assume (P \/ Q).
+Not_Elim in H and H1.
+assumption.
+Or_Intro_2.
+assumption.
+Qed.
+
+Lemma L15c (P Q : Prop) : (~P \/ ~Q -> ~(P /\ Q)) /\ (~(P /\ Q) -> ~P \/ ~Q).
+Proof.
+And_Intro.
+Impl_Intro.
+Not_Intro.
+Or_Elim in H.
+And_Elim_1 in H0.
+Not_Elim in H and H1.
+assumption.
+And_Elim_2 in H0.
+Not_Elim in H and H1.
+assumption.
+Impl_Intro.
+PBC.
+assume (P /\ Q).
+Not_Elim in H and H1.
+assumption.
+And_Intro.
+PBC.
+assume (~P \/ ~Q).
+Not_Elim in H0 and H2.
+assumption.
+Or_Intro_1.
+assumption.
+PBC.
+assume (~P \/ ~Q).
+Not_Elim in H0 and H2.
+assumption.
+Or_Intro_2.
+assumption.
+Qed.
+
+Lemma L15d (P : Prop) : P \/ ~P.
+Proof.
+PBC.
+assume (P \/ ~P). 
+Not_Elim in H and H0.
+assumption.
+Or_Intro_2.
+Not_Intro.
+assume (P \/ ~P).
+Not_Elim in H and H1.
+assumption.
+Or_Intro_1.
+assumption.
+Qed.
+
+Lemma L15e (P Q : Prop) : ((P -> Q) -> ~P \/ Q) /\ (~P \/ Q -> P -> Q).
+Proof.
+And_Intro.
+Impl_Intro.
+PBC.
+assume(~P\/Q).
+Not_Elim in H0 and H1.
+assumption.
+assume P.
+Impl_Elim in H and H1.
+Or_Intro_2.
+assumption.
+PBC.
+assume(~P\/Q).
+Not_Elim in H0 and H2.
+assumption.
+Or_Intro_1.
+assumption.
+Impl_Intro.
+Impl_Intro.
+Or_Elim in H.
+Not_Elim in H and H0.
+PBC.
+assumption.
+assumption.
+Qed.

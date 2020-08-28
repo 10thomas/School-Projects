@@ -1,0 +1,10 @@
+Require Import NaturalDeduction.
+Require Import Hoare.
+
+Lemma Q1 (A B : Type) : forall (l : list A) (f : A -> B), rev (map f l) = map f (rev l).
+(* You cannot use the lemma map_rev to do this proof. Use induction and the lemma map_app.
+   No other lemma is needed. *)
+Proof.
+Forall_Intro.
+Forall_Intro.
+Qed.

@@ -1,0 +1,15 @@
+Require Import NaturalDeduction.
+Lemma L15d (P : Prop) : P \/ ~P.
+Proof.
+PBC.
+assume (P \/ ~P). 
+Not_Elim in H and H0.
+assumption.
+Or_Intro_2.
+Not_Intro.
+assume (P \/ ~P).
+Not_Elim in H and H1.
+assumption.
+Or_Intro_1.
+assumption.
+Qed.

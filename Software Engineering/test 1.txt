@@ -1,0 +1,44 @@
+Require Import NaturalDeduction.
+
+Lemma L15f (P Q : Prop) : (~(P -> Q) -> P /\ ~Q) /\ (P /\ ~Q -> ~(P -> Q)).
+Proof.
+Admitted.
+
+Lemma L22a (P Q : Prop) : (P /\ Q -> Q /\ P) /\ (Q /\ P -> P /\ Q).
+Proof.
+Admitted.
+
+Lemma L22b (P Q : Prop) : (P \/ Q -> Q \/ P) /\ (Q \/ P -> P \/ Q).
+Admitted.
+
+Lemma L22c (P : Prop) : (False -> P /\ ~P) /\ (P /\ ~P -> False).
+Proof.
+Admitted.
+
+Lemma L22d (P Q R : Prop) : (P /\ (Q /\ R) -> (P /\ Q) /\ R) /\ ((P /\ Q) /\ R -> P /\ (Q /\ R)).
+Proof.
+Admitted.
+
+Lemma L22e (P Q R : Prop) : (P \/ (Q \/ R) -> (P \/ Q) \/ R) /\ ((P \/ Q) \/ R -> P \/ (Q \/ R)).
+Proof.
+Admitted.
+
+Lemma L22f (P Q R : Prop) : (P /\ (Q \/ R) -> (P /\ Q) \/ (P /\ R)) /\ ((P /\ Q) \/ (P /\ R) -> P /\ (Q \/ R)).
+Proof.
+Admitted.
+
+Lemma L22g (P Q R : Prop) : (P \/ (Q /\ R) -> (P \/ Q) /\ (P \/ R)) /\ ((P \/ Q) /\ (P \/ R) -> P \/ (Q /\ R)).
+Proof.
+Admitted.
+
+Lemma L65g (A : Type) (P : A -> Prop) (Q : Prop) : ((forall x, P x \/ Q) -> (forall x, P x) \/ Q) /\ ((forall x, P x) \/ Q -> (forall x, P x \/ Q)).
+Proof.
+Admitted.
+
+Lemma L65i (A : Type) (P Q : A -> Prop) : ((exists x, P x \/ Q x) -> (exists x, P x) \/ (exists x, Q x)) /\ ((exists x, P x) \/ (exists x, Q x) -> (exists x, P x \/ Q x)).
+Proof.
+Admitted.
+
+Lemma L65j (A : Type) (P : A -> Prop) (Q : Prop) : ((exists x, P x /\ Q) -> (exists x, P x) /\ Q) /\ ((exists x, P x) /\ Q -> (exists x, P x /\ Q)).
+Proof.
+Admitted.

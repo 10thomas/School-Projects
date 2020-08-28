@@ -1,0 +1,153 @@
+(* 
+Please do the following:
+1. Add the following information:
+   Name:
+   Std#:
+2. Create a folder with your student number
+   on the desktop.
+2. Rename this file to Testxxxxxxx where
+   xxxxxxx is your student number and
+   save it in the folder you have created above.
+4. Proof the lemmas below.
+5. Once you are finished sent the folder (right click >
+   Sent to) to the s: drive.
+6. Please note that you are only allowed to use tactics
+   that have been introduced in the class/labs.
+*)
+
+Require Import NaturalDeduction.
+Require Import Hoare.
+Require Import Lemmas.
+
+Lemma Q1 (n i r : nat) :
+  {{ True }}
+  i ::= 0;;
+  r ::= 0;;
+  While i <? n 
+  Do
+    i ::= i+1;;
+    r ::= r+i
+  Od
+  {{ 2*r = n*(n+1) }}. 
+(* The following lemmas might be helpful:
+   le_0_n, mul_add_distr_l, mul_add_distr_r, mul_comm, add_assoc, lt_le_succ, nlt_ge, le_antisymm 
+   No other lemma is needed. *)
+Proof.
+Hoare_while_tactic with (2*r = i*(i+1) /\ i <= n).
+(* Prop 1 *)
+Impl_Intro.
+And_Intro.
+trivial.
+apply le_0_n.
+(* Prop 2 *)
+Impl_Intro.
+bool2Prop in H.
+And_Elim_all in H.
+And_Intro.
+rewrite mul_add_distr_l.
+rewrite H.
+rewrite <- mul_add_distr_r.
+rewrite mul_comm.
+rewrite <- add_assoc.
+simpl.
+trivial.
+apply lt_le_succ.
+assumption.
+(* Prop 3 *)
+Impl_Intro.
+bool2Prop in H.
+And_Elim_all in H.
+apply nlt_ge in H0.
+apply (le_antisymm _ _ H0) in H1. 
+rewrite H1.
+assumption.
+Qed.
+
+(* count l n for a list l and a number n returns how often n occurs in the list l. *)
+Definition count := count_occ Nat.eq_dec.
+
+(* Auxillary lemmas for count. *)
+Lemma Count_Head_Eq : forall x0 x1 l, x0 = x1 -> count (x0::l) x1 = 1 + count l x1.
+Proof.
+intros; simpl; case (eq_dec x0 x1); [ trivial | contradiction ].
+Qed.
+
+Lemma Count_Head_Non_Eq : forall x0 x1 l, x0 <> x1 -> count (x0::l) x1 = count l x1.
+Proof.
+intros; simpl; case (eq_dec x0 x1); [ contradiction | trivial ].
+Qed.
+
+Lemma Count_Empty : forall n, count [] n = 0.
+Proof.
+trivial.
+Qed.
+
+Lemma Q2 (p : Ptr) (n x : nat) (l : list nat) :
+  {{ p implements l }}
+  n ::= 0;;
+  While negb (p =p Null)
+  Do
+    If p^.elem =? x Then n ::= n + 1 Else Skip Fi;;
+    p ::= p^.next
+  Od
+  {{ n = count l x }}. 
+(* Hints: 
+   1) After the initial Impl_Intro in the proof of Property 2 your goal will be an and-formula. 
+      Before you do the And_Intro apply rules to the assumption in order to get that p implements 
+      a non-empty list, p^.elem is its head, and p^.next is its tail. You need this for both proof
+      obligations after And_Intro.
+   2) Use the following lemmas from class:
+      Not_Null_Implements_Non_Empty, Non_Empty_expand, Next_Implements_Tail, Elem_Implements_Head, Null_Implements_Empty
+   3) In addition, use the three lemmas above and the lemmas add_0_l, add_0_r, add_assoc. 
+   4) No other lemma is needed. *)
+Proof.
+Hoare_while_tactic with (exists l', p implements l' /\ n + count l' x = count l x).
+(* Prop 1 *)
+Impl_Intro.
+Exists_Intro with l.
+And_Intro.
+assumption.
+rewrite add_0_l.
+trivial.
+(* Prop 2 *)
+bool2Prop.
+Impl_Intro.
+And_Elim_all in H.
+Exists_Elim in H.
+And_Elim_all in H1.
+assert (H3 := Not_Null_Implements_Non_Empty _ _ H0 H1).
+assert (H4 := Non_Empty_expand _ H3).
+Exists_Elim in H4.
+Exists_Elim in H5.
+assert (H7 := Next_Implements_Tail _ _ _ _ H1 H6).
+assert (H8 := Elem_Implements_Head _ _ _ _ H1 H6).
+And_Intro.
+Impl_Intro.
+Exists_Intro with x2.
+And_Intro.
+assumption.
+rewrite H6 in H2.
+rewrite H8 in H9.
+rewrite (Count_Head_Eq _ _ _ H9) in H2.
+rewrite add_assoc in H2.
+assumption.
+Impl_Intro.
+Exists_Intro with x2.
+And_Intro.
+assumption.
+rewrite H6 in H2.
+rewrite H8 in H9.
+rewrite (Count_Head_Non_Eq _ _ _ H9) in H2.
+assumption.
+(* Prop 3 *)
+Impl_Intro.
+bool2Prop in H.
+And_Elim_all in H.
+Exists_Elim in H.
+And_Elim_all in H1.
+assert (H3 := Null_Implements_Empty _ _ H0 H1).
+rewrite H3 in H2.
+rewrite Count_Empty in H2.
+rewrite add_0_r in H2.
+assumption.
+Qed.

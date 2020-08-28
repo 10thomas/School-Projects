@@ -1,0 +1,17 @@
+Require Import NaturalDeduction.
+Require Import Hoare.
+Require Import PeanoNat.
+Import Nat.
+Require Import List.
+Import ListNotations.
+
+(* In order to print a lemma from the library you can use Check, e.g. Check or_assoc. *)
+
+Lemma L1 (A : Type) : forall (l1 l2 : list A) (a : A), In a l1 \/ In a l2 -> In a (l1 ++ l2).
+(* The lemma or_assoc might be helpful. No other lemma is needed. *)
+Proof.
+Forall_Intro.
+Impl_Intro.
+Or_Intro.
+
+Qed.

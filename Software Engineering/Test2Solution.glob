@@ -1,0 +1,19 @@
+DIGEST 426c9b063373a0a7ec233cba7bea0b3e
+FTest2Solution
+R507:522 NaturalDeduction <> <> lib
+R540:544 Hoare <> <> lib
+prf 554:555 <> Q1
+R584:587 Coq.Init.Datatypes <> list ind
+R589:589 Test2Solution <> A var
+R598:601 Coq.Init.Logic <> ::type_scope:x_'->'_x not
+R602:602 Test2Solution <> B var
+R597:597 Test2Solution <> A var
+R619:621 Coq.Init.Logic <> ::type_scope:x_'='_x not
+R606:608 Coq.Lists.List <> rev def
+R611:613 Coq.Lists.List <> map def
+R617:617 Test2Solution <> l var
+R615:615 Test2Solution <> f var
+R622:624 Coq.Lists.List <> map def
+R629:631 Coq.Lists.List <> rev def
+R633:633 Test2Solution <> l var
+R626:626 Test2Solution <> f var
