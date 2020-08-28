@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<display>
+	<sizeX index = "10"></sizeX>
+	<sizeY index = "10"></sizeY>
+
+	<boardX index="0">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="1">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="2">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="3">
+	<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vli</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="4">
+		<boardY index="0">ht</boardY>
+		<boardY index="1">ht</boardY>
+		<boardY index="2">ht</boardY>
+		<boardY index="3">ht</boardY>
+		<boardY index="4">i</boardY>
+		<boardY index="5">i</boardY>
+		<boardY index="6">hti</boardY>
+		<boardY index="7">ht</boardY>
+		<boardY index="8">ht</boardY>
+		<boardY index="9">ht</boardY>
+	</boardX>
+	<boardX index="5">
+		<boardY index="0">hb</boardY>
+		<boardY index="1">hb</boardY>
+		<boardY index="2">hb</boardY>
+		<boardY index="3">hbi</boardY>
+		<boardY index="4">i</boardY>
+		<boardY index="5">i</boardY>
+		<boardY index="6">hb</boardY>
+		<boardY index="7">hb</boardY>
+		<boardY index="8">hb</boardY>
+		<boardY index="9">hb</boardY>
+	</boardX>
+	<boardX index="6">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vri</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="7">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="8">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+	<boardX index="9">
+		<boardY index="0">l</boardY>
+		<boardY index="1">l</boardY>
+		<boardY index="2">l</boardY>
+		<boardY index="3">l</boardY>
+		<boardY index="4">vl</boardY>
+		<boardY index="5">vr</boardY>
+		<boardY index="6">l</boardY>
+		<boardY index="7">l</boardY>
+		<boardY index="8">l</boardY>
+		<boardY index="9">l</boardY>
+	</boardX>
+</display>
