@@ -1,0 +1,22 @@
+<html><head><style>
+table, th, td { border: 1px solid black; }
+</style><script>
+
+function handledata() {
+if (this.readyState==4 & this.status==200)
+ window.courses.insertAdjacentHTML("beforeend",this.response);
+}
+function load(page) {
+ req=new XMLHttpRequest();
+ req.onreadystatechange=handledata;
+ req.open("GET","thing"+page+".html");
+ req.send();
+}
+
+</script></head><body>
+<table id="courses">
+<tr><th>Dept</th><th>Code</th></tr>
+</table>
+<button onclick="load(1)">COSC</button>
+<button onclick="load(2)">Other</button>
+</body></html>

@@ -1,0 +1,17 @@
+<html><head><script>
+function getpie() {
+ fetch('favouritepies.php').then(
+ function(response) {
+ return response.text();
+ }
+ ).then (
+ function(textdata) {
+ console.log(textdata+textdata);
+ window.tasty.innerHTML=textdata;
+ }
+ );
+}
+</script></head><body>
+If you ask me, <span id="tasty"></span> pie is the best!
+<button onclick='getpie();'>truth it!</button
+</body></html>

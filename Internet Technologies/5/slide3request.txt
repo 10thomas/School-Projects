@@ -1,0 +1,13 @@
+#!/usr/bin/php-cgi
+
+<?php
+header('Content-Type: text/plain'); 
+//Basic Mime type
+
+echo "4"; 
+//chosen by fair dice roll.
+	
+//guaranteed to be random.
+
+?>
+

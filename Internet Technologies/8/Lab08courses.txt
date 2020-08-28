@@ -1,0 +1,16 @@
+var dbuser='tt13fa';
+var dbpass='5618293';
+//Fill in username below!
+use yourusername;
+db.auth(dbuser,dbpass);
+db.courses.insertMany([
+{code:"COSC1P02",title:"Introduction to Computer Science",desc:"Foundations of Computer Science and computer programming in a high-level language (normally Java).",prereqs:[]},
+{code: "COSC1P03",title: 'Introduction to Data Structures',desc:"Programming and problem solving in a high-level programming language (normally Java).",prereqs:['COSC1P02']},
+{code:"COSC2P03",title:"Advanced Data Structures",desc:"Implementation and use of advanced data structures including trees, graphs, hash tables and advanced list structures, sorting and searching, recursion and traversals.",prereqs:['COSC1P03','MATH1P66','MATH1P67']},
+{code:"COSC2P89",title:"Internet Technologies",desc:"Concepts and techniques required for building and maintaining advanced interactive Web sites.",prereqs:['COSC1P03']},
+{code:"MATH1P66",title:"Mathematical Reasoning",desc:"Introduction to mathematical INDGraction, logic and proofs including mathematical induction.",prereqs:[]},
+{code:"MATH1P67",title:"Mathematics for Computer Science",desc:"Development and analysis of algorithms, complexity of algorithms, recursion solving recurrence relations and relations and functions.",prereqs:['MATH1P66']},
+{code:"COSC4P61",title:"Theory of Computation",desc:"Regular languages and finite state machines: deterministic and non-deterministic machines, Kleene's theorem, the pumping lemma, Myhill-Nerode Theorem and decidable questions.",prereqs:['MATH1P67']},
+{code:"COSC3P71",title:"Introduction to Artificial Intelligence",desc:"Historic and philosophical foundations of AI; knowledge representation and reasoning; problem spaces; blind and heuristic search; adversarial search in game playing; machine learning; social and ethical considerations.",prereqs:['COSC2P03']},
+{code:"COSC3P32",title:"Introduction to Database Systems",desc:"Fundamental database concepts: specification, design and applications; various models including the relational model; normal forms, efficiency considerations, queries using SQL, database administration and security.",prereqs:['COSC2P03']},
+]);

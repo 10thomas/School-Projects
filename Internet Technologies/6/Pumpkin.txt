@@ -1,0 +1,5 @@
+Pumpkin,10.0
+People,4.5
+Purple,8.5
+Pumice,1.0
+Putrid,0.5

@@ -1,0 +1,5 @@
+Monkey kidneys,1.5
+Monkey brains,1.5
+Monkey ears,1.5
+Monkey nose,1.5
+Monkey toes,1.5
