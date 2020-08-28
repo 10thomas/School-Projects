@@ -1,0 +1,36 @@
+public void readFile(String fileName)
+  {
+    String line = null;
+    try 
+    {
+      FileReader fileReader = new FileReader(fileName);
+      BufferedReader bufferedReader = new BufferedReader(fileReader);
+      //the first line is the size of the sudoku board. could be a 4 x4 board, 9x9 board, 16 x 16 board and still solve
+      line = bufferedReader.readLine();
+      boardSize = Integer.parseInt(line);
+      board = new int [boardSize][boardSize];
+      
+      //loops through the remaining lines inside the file. spliting by spaces and converting the strings 
+      //into integers and stroing inside the board
+      for(int i = 0; i < boardSize; i++)
+      {
+        line = bufferedReader.readLine();
+        String[] parts = line.split(" ");
+        for(int j = 0; j < boardSize; j++)
+          board[i][j] = Integer.parseInt(parts[j]);
+      }
+      bufferedReader.close();         
+    }
+    catch(FileNotFoundException ex) 
+    {
+      System.out.println( "Unable to open file '" + fileName + "'");  
+      String file = getFileName();
+      readFile(file);
+    }
+    catch(IOException ex) 
+    {
+      System.out.println("Error reading file '" + fileName + "'");  
+      String file = getFileName();
+      readFile(file);
+    }
+  }//readFile

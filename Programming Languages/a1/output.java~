@@ -1,0 +1,8 @@
+class output
+{
+  public String printSudoku()
+  {
+    System.out.println();
+    
+  }
+}
